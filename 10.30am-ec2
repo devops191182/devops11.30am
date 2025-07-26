@@ -5,18 +5,21 @@ Resources:
   EC2SecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Enable SSH access 
+      GroupDescription: Enable SSH 
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
-
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
   EC2Instance:      
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      KeyName: 9.30AM-PASS
+      KeyName: 930AM-PASS
       ImageId: ami-0d03cb826412c6b0f  # Amazon Linux 2 AMI (replace if needed)
       SecurityGroupIds:
         - !Ref EC2SecurityGroup
