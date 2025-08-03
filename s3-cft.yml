@@ -25,6 +25,7 @@ Resources:
                   - s3:GetObject
                   - s3:PutObject
                   - s3:ListBucket
+                  - s3:DeleteBucket
                 Resource: 
                   - arn:aws:s3:::devops-10.30an-demo/*
                   - arn:aws:s3:::devops-10.30an-demo
